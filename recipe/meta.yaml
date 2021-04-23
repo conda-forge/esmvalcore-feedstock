@@ -12,7 +12,7 @@ source:
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 0
+  number: 1
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
@@ -30,6 +30,9 @@ requirements:
     - graphviz
     - iris >=3
     - python-stratify
+    # cython is needed as a work-around for
+    # https://github.com/conda-forge/python-stratify-feedstock/issues/15
+    - cython
     - scipy
     # Normally installed via pip:
     - cftime
