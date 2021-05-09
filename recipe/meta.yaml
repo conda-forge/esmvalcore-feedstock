@@ -12,7 +12,7 @@ source:
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 1
+  number: 2
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
@@ -94,3 +94,7 @@ about:
 extra:
   recipe-maintainers:
     - zklaus
+    - valeriupredoi
+    - nielsdrost
+    - jvegasbsc
+    - bouweandela
