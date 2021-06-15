@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9b53df55c6a4d5d803ee30960bd0d7b4c2f6ea68c5f6532c8c17990d50fe5837
+  sha256: e3c40513c501c2eaaa982a3e61891f9b34f455f8ad88a7e18578da109335bd9b
 
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 2
+  number: 0
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -28,15 +28,16 @@ requirements:
     # esmvaltool
     - python >=3.6
     - graphviz
-    - iris >=3
+    - iris >=3.0.1
     - python-stratify
     # cython is needed as a work-around for
     # https://github.com/conda-forge/python-stratify-feedstock/issues/15
     - cython
-    - scipy
+    - scipy <1.6.0  # until ESMValGroup/ESMValCore/issues/927 gets resolved
     # Normally installed via pip:
     - cftime
-    - cf-units
+    - cf-units >=2.1.5
+    - dask
     - esmpy
     - fiona
     - fire
@@ -51,13 +52,15 @@ requirements:
     - pyyaml
     - requests
     - shapely
-    - yamale <3
+    - yamale
 
 test:
   source_files:
     - tests
     - setup.cfg
   requires:
+    # - ESMValTool_sample_data==0.0.3
+    - pip
     - pytest
     - pytest-cov
     - pytest-env
@@ -68,7 +71,11 @@ test:
     - pytest-mypy
     - pytest-xdist
     - r-yaml
+    # - types-requests
+    # - types-pkg_resources
+    # - types-PyYAML
   commands:
+    - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
     # We deactivate two tests that break on newer dependency versions. These
     # are pure test errors and are fixed in esmvalcore >=2.3.
     - pytest -n 2 --ignore=run_test.py -k 'not ((bcc_csm1_1 and tos_fix_data) or (task and run_tasks))'
@@ -86,8 +93,8 @@ about:
   home: https://www.esmvaltool.org
   license: Apache-2.0
   license_file: LICENSE
-  summary: "ESMValCore: A community tool for pre-processing data from Earth system models in CMIP and running analysis scripts."
-  description: "ESMValCore: A community tool for pre-processing data from Earth system models in CMIP and running analysis scripts."
+  summary: 'ESMValCore: A community tool for pre-processing data from Earth system models in CMIP and running analysis scripts.'
+  description: 'ESMValCore: A community tool for pre-processing data from Earth system models in CMIP and running analysis scripts.'
   doc_url: https://esmvaltool.readthedocs.io/
   dev_url: https://github.com/ESMValGroup/ESMValCore
 
