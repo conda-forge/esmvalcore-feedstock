@@ -28,7 +28,7 @@ requirements:
     # esmvaltool
     - python >=3.6
     - graphviz
-    - iris >=3
+    - iris >=3.0.1
     - python-stratify
     # cython is needed as a work-around for
     # https://github.com/conda-forge/python-stratify-feedstock/issues/15
@@ -36,7 +36,8 @@ requirements:
     - scipy
     # Normally installed via pip:
     - cftime
-    - cf-units
+    - cf-units >=2.1.5
+    - dask[array]
     - esmpy
     - fiona
     - fire
@@ -44,20 +45,21 @@ requirements:
     - nc-time-axis
     - netCDF4
     - numpy
-    - prov
+    - prov[dot]
     - psutil
     - pybtex
     - pydot
     - pyyaml
     - requests
-    - shapely
-    - yamale <3
+    - shapely[vectorized]
+    - yamale
 
 test:
   source_files:
     - tests
     - setup.cfg
   requires:
+    - ESMValTool_sample_data==0.0.3
     - pytest
     - pytest-cov
     - pytest-env
@@ -68,6 +70,9 @@ test:
     - pytest-mypy
     - pytest-xdist
     - r-yaml
+    - types-requests
+    - types-pkg_resources
+    - types-PyYAML
   commands:
     # We deactivate two tests that break on newer dependency versions. These
     # are pure test errors and are fixed in esmvalcore >=2.3.
