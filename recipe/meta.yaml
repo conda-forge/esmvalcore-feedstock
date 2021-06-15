@@ -37,7 +37,7 @@ requirements:
     # Normally installed via pip:
     - cftime
     - cf-units >=2.1.5
-    - dask[array]
+    - dask
     - esmpy
     - fiona
     - fire
@@ -45,13 +45,13 @@ requirements:
     - nc-time-axis
     - netCDF4
     - numpy
-    - prov[dot]
+    - prov
     - psutil
     - pybtex
     - pydot
     - pyyaml
     - requests
-    - shapely[vectorized]
+    - shapely
     - yamale
 
 test:
