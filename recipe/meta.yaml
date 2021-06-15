@@ -59,7 +59,7 @@ test:
     - tests
     - setup.cfg
   requires:
-    - ESMValTool_sample_data==0.0.3
+    # - ESMValTool_sample_data==0.0.3
     - pytest
     - pytest-cov
     - pytest-env
@@ -74,7 +74,7 @@ test:
     # - types-pkg_resources
     # - types-PyYAML
   commands:
-    - pip install -e .[test]
+    - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
     # We deactivate two tests that break on newer dependency versions. These
     # are pure test errors and are fixed in esmvalcore >=2.3.
     - pytest -n 2 --ignore=run_test.py -k 'not ((bcc_csm1_1 and tos_fix_data) or (task and run_tasks))'
