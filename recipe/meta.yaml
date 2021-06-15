@@ -60,6 +60,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
+    - pip
     - pytest
     - pytest-cov
     - pytest-env
