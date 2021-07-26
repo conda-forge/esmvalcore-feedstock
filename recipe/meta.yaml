@@ -28,7 +28,9 @@ requirements:
     # esmvaltool
     - python >=3.6
     - graphviz
-    - iris >=3.0.1
+    # iris=3.0.4 dropped support for Python 3.6 but
+    # we haven't just yet (23 July 2021, bugfix release 2.3.1)
+    - iris >=3.0.2,<3.0.4
     - python-stratify
     # cython is needed as a work-around for
     # https://github.com/conda-forge/python-stratify-feedstock/issues/15
@@ -36,7 +38,7 @@ requirements:
     - scipy <1.6.0  # until ESMValGroup/ESMValCore/issues/927 gets resolved
     # Normally installed via pip:
     - cftime
-    - cf-units >=2.1.5
+    - cf-units >=3.0.0
     - dask
     - esmpy
     - fiona
