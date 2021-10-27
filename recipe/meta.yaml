@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.4.0rc1" %}
+{% set version = "2.4.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9972a4e75c58287a0af59cd95cbe117ba93e21adcb3bceb097f0662d42118296
+  sha256: df5521857fa77116159b3e179285ba0afd88435bae15f3e97a2437c79687fda1
 
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 1
+  number: 0
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
