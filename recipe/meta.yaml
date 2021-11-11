@@ -12,7 +12,7 @@ source:
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 0
+  number: 1
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
@@ -41,6 +41,7 @@ requirements:
     - fiona
     - fire
     - humanfriendly
+    - importlib_resources
     - jinja2
     - myproxyclient
     - netCDF4
