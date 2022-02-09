@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.5.0rc1" %}
+{% set version = "2.5.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4394adf14b9331cda13039fd4d786da61415563756d0bef1c4ea341d616b901f
+  sha256: 970ed952c6cd597ff8f9fe5ec5208ded3b064c43451cb989fd55442973baf02b
 
 build:
   # Increment the build number when building a new conda package of the same
