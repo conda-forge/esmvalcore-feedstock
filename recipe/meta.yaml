@@ -31,6 +31,7 @@ requirements:
     - python-stratify
     - scipy >=1.6
     # Normally installed via pip:
+    - cartopy
     - cftime
     - cf-units >=3.0.0
     - compilers
@@ -42,6 +43,8 @@ requirements:
     - fire
     - geopy
     - humanfriendly
+    - importlib_resources
+    - isodate
     - jinja2
     - myproxyclient
     - nc-time-axis
@@ -49,12 +52,13 @@ requirements:
     - netCDF4
     - numpy
     - pandas
+    - pillow
     - prov
     - psutil
     - pybtex
-    - pydot
     - pyyaml
     - requests
+    - requests_cache <0.6
     - shapely
     - yamale
 
@@ -64,6 +68,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
+    - flake8 <4
     - pip
     - pytest
     - pytest-cov
@@ -102,8 +107,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - zklaus
-    - valeriupredoi
-    - nielsdrost
     - bouweandela
+    - nielsdrost
     - schlunma
+    - valeriupredoi
+    - zklaus
