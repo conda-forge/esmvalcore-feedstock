@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.4.0rc3" %}
+{% set version = "2.5.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ce24c306d3d9a17e52759fa47ccecc45846ae1792bcd7d8a41f1b0ead58ef85e
+  sha256: 970ed952c6cd597ff8f9fe5ec5208ded3b064c43451cb989fd55442973baf02b
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -21,7 +21,7 @@ requirements:
   host:
     - git
     - python >=3.7
-    - pip
+    - pip !=21.3
     - pytest-runner
     - setuptools_scm
   run:
@@ -29,8 +29,9 @@ requirements:
     - python >=3.7
     - iris >=3.1.0
     - python-stratify
-    - scipy
+    - scipy >=1.6
     # Normally installed via pip:
+    - cartopy
     - cftime
     - cf-units >=3.0.0
     - dask
@@ -39,18 +40,24 @@ requirements:
     - esmpy !=8.1.0
     - fiona
     - fire
+    - geopy
     - humanfriendly
+    - importlib_resources
+    - isodate
     - jinja2
     - myproxyclient
     - nc-time-axis
+    - nested-lookup
     - netCDF4
     - numpy
+    - pandas
+    - pillow
     - prov
     - psutil
     - pybtex
-    - pydot
     - pyyaml
     - requests
+    - requests_cache <0.6
     - shapely
     - yamale
 
@@ -60,6 +67,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
+    - flake8 <4
     - pip
     - pytest
     - pytest-cov
@@ -98,8 +106,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - zklaus
-    - valeriupredoi
-    - nielsdrost
-    - jvegasbsc
     - bouweandela
+    - nielsdrost
+    - schlunma
+    - valeriupredoi
+    - zklaus
