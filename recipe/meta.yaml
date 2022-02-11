@@ -34,7 +34,6 @@ requirements:
     - cartopy
     - cftime
     - cf-units >=3.0.0
-    - compilers
     - dask
     - defusedxml
     - esgf-pyclient
