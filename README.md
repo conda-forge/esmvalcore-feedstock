@@ -125,9 +125,7 @@ Feedstock Maintainers
 * [@bouweandela](https://github.com/bouweandela/)
 * [@jvegasbsc](https://github.com/jvegasbsc/)
 * [@nielsdrost](https://github.com/nielsdrost/)
+* [@schlunma](https://github.com/schlunma/)
 * [@valeriupredoi](https://github.com/valeriupredoi/)
 * [@zklaus](https://github.com/zklaus/)
-
-
-<!-- dummy commit to enable rerendering -->
 
