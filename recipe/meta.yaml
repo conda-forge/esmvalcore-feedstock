@@ -15,7 +15,7 @@ build:
   number: 2
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
