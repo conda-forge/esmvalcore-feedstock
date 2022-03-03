@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.5.0rc3" %}
+{% set version = "2.5.0rc4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4fc935a0543397a899adc574cbff603da1eb2b98deb7a2110e5435c01cd5af78
+  sha256: 3c8763c9c5f0b5992fde651b6f8c5b38e636965e5a8a28c668393dda97cb1748
 
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 1
+  number: 0
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -27,7 +27,7 @@ requirements:
   run:
     # esmvaltool
     - python >=3.7
-    - iris >=3.1.0
+    - iris >=3.1.0,!=3.2.0.post0,!=3.2.0
     - python-stratify
     - scipy >=1.6
     # Normally installed via pip:
@@ -35,7 +35,6 @@ requirements:
     - cftime
     - cf-units >=3.0.0
     - dask
-    - defusedxml
     - esgf-pyclient
     - esmpy !=8.1.0
     - fiona
@@ -45,7 +44,6 @@ requirements:
     - importlib_resources
     - isodate
     - jinja2
-    - myproxyclient
     - nc-time-axis
     - nested-lookup
     - netCDF4
@@ -57,7 +55,6 @@ requirements:
     - pybtex
     - pyyaml
     - requests
-    - requests_cache <0.6
     - shapely
     - yamale
 
