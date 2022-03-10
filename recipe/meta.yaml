@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.5.0rc4" %}
+{% set version = "2.5.0rc5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3c8763c9c5f0b5992fde651b6f8c5b38e636965e5a8a28c668393dda97cb1748
+  sha256: c52fe8b38c385bc3acce1af8d2be727c3420acfb7444404e66f57fb6fb6c20c2
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -27,7 +27,7 @@ requirements:
   run:
     # esmvaltool
     - python >=3.7
-    - iris >=3.1.0,!=3.2.0.post0,!=3.2.0
+    - iris >=3.1.0,<3.2.0
     - python-stratify
     - scipy >=1.6
     # Normally installed via pip:
@@ -35,7 +35,7 @@ requirements:
     - cftime
     - cf-units >=3.0.0
     - dask
-    - esgf-pyclient
+    - esgf-pyclient >=0.3.1
     - esmpy !=8.1.0
     - fiona
     - fire
