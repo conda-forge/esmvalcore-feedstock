@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.4.0" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b8f06a9c47d2af44fdbf657a4b43332b3a12251511a603df04ba5f0306ba7482
+  sha256: d2efd8679cf3150a8369bce261fc992d58bbf60636c8ad10b9f1d313f43eaab4
 
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 3
+  number: 0
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -20,30 +20,32 @@ build:
 requirements:
   host:
     - git
-    - python >=3.7
-    - pip
+    - python >=3.8
+    - pip !=21.3
     - pytest-runner
     - setuptools_scm
   run:
     # esmvaltool
-    - python >=3.7
-    - iris >=3.1.0
+    - python >=3.8
+    - iris >=3.1.0,<3.2.0
     - python-stratify
-    - scipy
+    - scipy >=1.6
     # Normally installed via pip:
     - cartopy
     - cftime
     - cf-units >=3.0.0
     - dask
-    - defusedxml
-    - esgf-pyclient
+    - esgf-pyclient >=0.3.1
     - esmpy !=8.1.0
     - fiona
     - fire
+    - geopy
     - humanfriendly
     - importlib_resources
+    - isodate
     - jinja2
-    - myproxyclient
+    - nc-time-axis
+    - nested-lookup
     - netCDF4
     - numpy
     - pandas
@@ -62,6 +64,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
+    - flake8 <4
     - pip
     - pytest
     - pytest-cov
@@ -78,7 +81,7 @@ test:
     # - types-PyYAML
   commands:
     - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
-    - pytest -n 2 --ignore=run_test.py
+    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
   imports:
@@ -100,8 +103,8 @@ about:
 
 extra:
   recipe-maintainers:
-    - schlunma
-    - zklaus
-    - valeriupredoi
-    - nielsdrost
     - bouweandela
+    - nielsdrost
+    - schlunma
+    - valeriupredoi
+    - zklaus
