@@ -41,7 +41,7 @@ requirements:
     - fire
     - geopy
     - humanfriendly
-    - importlib_resources # [py==38]
+    - importlib_resources
     - isodate
     - jinja2
     - nc-time-axis
