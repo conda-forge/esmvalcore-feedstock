@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.5.0rc6" %}
+{% set version = "2.6.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e503d0b5ffe3386e4044df26b5b00f78014eae5698f212d68ab40c84ae8faee7
+  sha256: 5fd18cb09fd40dc913d669d58f487599c56efd6f0a45a5580d40d3a316d2fc71
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -27,13 +27,13 @@ requirements:
   run:
     # esmvaltool
     - python >=3.8
-    - iris >=3.1.0,<3.2.0
+    - iris >=3.2.1
     - python-stratify
     - scipy >=1.6
     # Normally installed via pip:
     - cartopy
     - cftime
-    - cf-units >=3.0.0
+    - cf-units >=3.0.0, !=3.0.1.post0
     - dask
     - esgf-pyclient >=0.3.1
     - esmpy !=8.1.0
@@ -41,7 +41,7 @@ requirements:
     - fire
     - geopy
     - humanfriendly
-    - importlib_resources
+    - importlib_resources # [py==38]
     - isodate
     - jinja2
     - nc-time-axis
@@ -64,7 +64,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8 <4
+    - flake8
     - pip
     - pytest
     - pytest-cov
