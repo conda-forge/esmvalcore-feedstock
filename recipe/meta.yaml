@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.6.0rc4" %}
+{% set version = "2.6.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8ec2b8190f603dc3f9e102a6ad87d954a48092f959e1cad047843aff2753e3ce
+  sha256: 5fd18cb09fd40dc913d669d58f487599c56efd6f0a45a5580d40d3a316d2fc71
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -33,7 +33,7 @@ requirements:
     # Normally installed via pip:
     - cartopy
     - cftime
-    - cf-units >=3.0.0, <3.1.0, !=3.0.1.post0
+    - cf-units >=3.0.0, !=3.0.1.post0
     - dask
     - esgf-pyclient >=0.3.1
     - esmpy !=8.1.0
