@@ -152,6 +152,7 @@ Feedstock Maintainers
 * [@bouweandela](https://github.com/bouweandela/)
 * [@nielsdrost](https://github.com/nielsdrost/)
 * [@schlunma](https://github.com/schlunma/)
+* [@sloosvel](https://github.com/sloosvel/)
 * [@valeriupredoi](https://github.com/valeriupredoi/)
 * [@zklaus](https://github.com/zklaus/)
 
