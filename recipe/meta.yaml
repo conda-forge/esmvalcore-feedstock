@@ -89,8 +89,11 @@ test:
     - esmvalcore.cmor
     - esmvalcore.cmor.check
     - esmvalcore.cmor.fix
-    - esmvalcore.preprocessor
+    - esmvalcore.esgf
+    - esmvalcore.exceptions
     - esmvalcore.experimental
+    - esmvalcore.iris_helpers
+    - esmvalcore.preprocessor
 
 about:
   home: https://www.esmvaltool.org
@@ -106,5 +109,6 @@ extra:
     - bouweandela
     - nielsdrost
     - schlunma
+    - sloosvel
     - valeriupredoi
     - zklaus

@@ -5,7 +5,7 @@ Home: https://www.esmvaltool.org
 
 Package license: Apache-2.0
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/esmvalcore-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/esmvalcore-feedstock/blob/main/LICENSE.txt)
 
 Summary: ESMValCore: A community tool for pre-processing data from Earth system models in CMIP and running analysis scripts.
 
@@ -21,8 +21,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12350&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/esmvalcore-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12350&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/esmvalcore-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -152,6 +152,7 @@ Feedstock Maintainers
 * [@bouweandela](https://github.com/bouweandela/)
 * [@nielsdrost](https://github.com/nielsdrost/)
 * [@schlunma](https://github.com/schlunma/)
+* [@sloosvel](https://github.com/sloosvel/)
 * [@valeriupredoi](https://github.com/valeriupredoi/)
 * [@zklaus](https://github.com/zklaus/)
 
