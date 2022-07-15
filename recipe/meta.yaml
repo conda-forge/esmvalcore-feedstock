@@ -64,7 +64,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8 <4
+    - flake8
     - pip
     - pytest
     - pytest-cov
