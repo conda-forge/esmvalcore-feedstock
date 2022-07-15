@@ -27,13 +27,13 @@ requirements:
   run:
     # esmvaltool
     - python >=3.8
-    - iris >=3.1.0,<3.2.0
+    - iris >=3.2.1
     - python-stratify
     - scipy >=1.6
     # Normally installed via pip:
     - cartopy
     - cftime
-    - cf-units >=3.0.0
+    - cf-units >=3.0.0, <3.1.0, !=3.0.1.post0
     - dask
     - esgf-pyclient >=0.3.1
     - esmpy !=8.1.0
