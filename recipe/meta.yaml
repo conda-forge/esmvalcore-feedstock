@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.7.0rc1" %}
+{% set version = "2.7.0rc2" %}
 
 package:
   name: {{ name|lower }}
