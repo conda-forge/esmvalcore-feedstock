@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.6.0rc4" %}
+{% set version = "2.7.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8ec2b8190f603dc3f9e102a6ad87d954a48092f959e1cad047843aff2753e3ce
+  sha256: ccb76984dbd4e0c2db4b5486322144e0f4079fb9c91afe481ed3b8606422d767
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -46,7 +46,7 @@ requirements:
     - jinja2
     - nc-time-axis
     - nested-lookup
-    - netCDF4
+    - netCDF4 !=1.6.1
     - numpy
     - pandas
     - pillow
@@ -64,7 +64,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8
+    - flake8 <5.0
     - pip
     - pytest
     - pytest-cov
