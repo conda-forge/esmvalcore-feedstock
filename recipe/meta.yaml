@@ -46,7 +46,7 @@ requirements:
     - jinja2
     - nc-time-axis
     - nested-lookup
-    - netCDF4
+    - netCDF4 !=1.6.1
     - numpy
     - pandas
     - pillow
@@ -64,7 +64,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8
+    - flake8 <5.0
     - pip
     - pytest
     - pytest-cov
