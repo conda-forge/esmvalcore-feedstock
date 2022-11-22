@@ -33,7 +33,7 @@ requirements:
     # Normally installed via pip:
     - cartopy
     - cftime
-    - cf-units
+    - cf-units >=3.0.0, <3.1.0, !=3.0.1.post0
     - dask
     - esgf-pyclient >=0.3.1
     - esmpy !=8.1.0
