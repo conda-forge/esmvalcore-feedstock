@@ -33,7 +33,7 @@ requirements:
     # Normally installed via pip:
     - cartopy
     - cftime
-    - cf-units >=3.0.0, <3.1.0, !=3.0.1.post0
+    - cf-units
     - dask
     - esgf-pyclient >=0.3.1
     - esmpy !=8.1.0
@@ -64,7 +64,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8 <5.0
+    - flake8
     - pip
     - pytest
     - pytest-cov
@@ -73,7 +73,7 @@ test:
     - pytest-html
     - pytest-metadata
     - pytest-mock
-    - pytest-mypy
+    - pytest-mypy <0.10.1
     - pytest-xdist
     - r-yaml
     # - types-requests
