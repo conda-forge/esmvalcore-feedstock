@@ -74,7 +74,7 @@ test:
     - pytest-html
     - pytest-metadata
     - pytest-mock
-    - pytest-mypy <0.10.1
+    - pytest-mypy
     - pytest-xdist
     - r-yaml
     # - types-requests
