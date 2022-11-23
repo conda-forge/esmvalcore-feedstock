@@ -12,7 +12,7 @@ source:
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 0
+  number: 1
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -46,7 +46,7 @@ requirements:
     - jinja2
     - nc-time-axis
     - nested-lookup
-    - netCDF4 !=1.6.1
+    - netCDF4
     - numpy
     - pandas
     - pillow
@@ -64,7 +64,8 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8 <5.0
+    - flake8
+    - mypy <0.990
     - pip
     - pytest
     - pytest-cov
