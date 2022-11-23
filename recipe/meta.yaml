@@ -65,7 +65,7 @@ test:
   requires:
     # - ESMValTool_sample_data==0.0.3
     - flake8
-    - mypy <0.99
+    - mypy <0.990
     - pip
     - pytest
     - pytest-cov
