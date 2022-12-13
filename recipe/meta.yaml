@@ -65,9 +65,7 @@ test:
   requires:
     # - ESMValTool_sample_data==0.0.3
     - flake8
-    # Temporarily deactivate mypy tests for v2.7.1 so we don't
-    # have to pin distributed/dask; remove this at next release 2.8.0
-    # - mypy <0.990
+    - mypy <0.990
     - pip
     - pytest
     - pytest-cov
@@ -76,7 +74,7 @@ test:
     - pytest-html
     - pytest-metadata
     - pytest-mock
-    # - pytest-mypy
+    - pytest-mypy
     - pytest-xdist
     - r-yaml
     # - types-requests
