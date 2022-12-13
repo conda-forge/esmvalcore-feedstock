@@ -35,7 +35,6 @@ requirements:
     - cftime
     - cf-units
     - dask
-    - distributed <2022.12.0
     - esgf-pyclient >=0.3.1
     - esmpy <8.4.0, !=8.1.0
     - fiona
@@ -66,7 +65,9 @@ test:
   requires:
     # - ESMValTool_sample_data==0.0.3
     - flake8
-    - mypy <0.990
+    # Temporarily deactivate mypy tests for v2.7.1 so we don't
+    # have to pin distributed/dask; remove this at next release 2.8.0
+    # - mypy <0.990
     - pip
     - pytest
     - pytest-cov
@@ -75,7 +76,7 @@ test:
     - pytest-html
     - pytest-metadata
     - pytest-mock
-    - pytest-mypy
+    # - pytest-mypy
     - pytest-xdist
     - r-yaml
     # - types-requests
@@ -83,7 +84,7 @@ test:
     # - types-PyYAML
   commands:
     - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
-    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
+    - pytest -n 2 -m 'not mypy' --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
   imports:
