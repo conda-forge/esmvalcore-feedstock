@@ -26,7 +26,7 @@ requirements:
     - setuptools_scm
   run:
     # esmvaltool
-    - python >=3.8,3.11
+    - python >=3.8,<3.11
     - iris >=3.4.0
     - python-stratify
     - scipy >=1.6
