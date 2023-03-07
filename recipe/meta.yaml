@@ -36,7 +36,7 @@ requirements:
     - cf-units
     - dask
     - esgf-pyclient >=0.3.1
-    - esmpy !=8.1.0
+    - esmpy !=8.1.0,<8.4.0
     - filelock
     - fiona
     - fire
