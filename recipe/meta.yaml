@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.7.0rc2" %}
+{% set version = "2.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ccb76984dbd4e0c2db4b5486322144e0f4079fb9c91afe481ed3b8606422d767
+  sha256: 8fd1e953aadbd24f864c309f4c4b99602b34fc71366aeba6dc6a4456c760b602
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -33,10 +33,10 @@ requirements:
     # Normally installed via pip:
     - cartopy
     - cftime
-    - cf-units >=3.0.0, <3.1.0, !=3.0.1.post0
+    - cf-units
     - dask
     - esgf-pyclient >=0.3.1
-    - esmpy !=8.1.0
+    - esmpy <8.4.0, !=8.1.0
     - fiona
     - fire
     - geopy
@@ -64,7 +64,8 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8 <5.0
+    - flake8
+    - mypy <0.990
     - pip
     - pytest
     - pytest-cov
@@ -81,7 +82,7 @@ test:
     # - types-PyYAML
   commands:
     - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
-    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
+    - pytest -n 2 -m 'not mypy' --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
   imports:
@@ -106,6 +107,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - remi-kazeroni
     - bouweandela
     - nielsdrost
     - schlunma
