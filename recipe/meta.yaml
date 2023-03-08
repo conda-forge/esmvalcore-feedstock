@@ -69,7 +69,7 @@ test:
   requires:
     # - ESMValTool_sample_data==0.0.3
     - flake8
-    - mypy <0.990
+    - mypy >=0.990
     - pip
     - pytest
     - pytest-cov
@@ -86,7 +86,7 @@ test:
     # - types-PyYAML
   commands:
     - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
-    - pytest -n 2 -m 'not mypy' --ignore=run_test.py --ignore=tests/unit/documentation/
+    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
   imports:
