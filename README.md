@@ -156,4 +156,3 @@ Feedstock Maintainers
 * [@sloosvel](https://github.com/sloosvel/)
 * [@valeriupredoi](https://github.com/valeriupredoi/)
 * [@zklaus](https://github.com/zklaus/)
-
