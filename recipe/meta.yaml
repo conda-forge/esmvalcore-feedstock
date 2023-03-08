@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.7.0rc2" %}
+{% set version = "2.8.0rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ccb76984dbd4e0c2db4b5486322144e0f4079fb9c91afe481ed3b8606422d767
+  sha256: 93137dff3517132d4993d87f68d3a1fc88cc2925fb31fc01e2b3c586d62d8606
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -20,38 +20,42 @@ build:
 requirements:
   host:
     - git
-    - python >=3.8
+    - python >=3.8,<3.11
     - pip !=21.3
     - pytest-runner
     - setuptools_scm
   run:
     # esmvaltool
-    - python >=3.8
-    - iris >=3.2.1
+    - python >=3.8,<3.11
+    - iris >=3.4.0
     - python-stratify
     - scipy >=1.6
     # Normally installed via pip:
     - cartopy
     - cftime
-    - cf-units >=3.0.0, <3.1.0, !=3.0.1.post0
+    - cf-units
     - dask
     - esgf-pyclient >=0.3.1
-    - esmpy !=8.1.0
+    - esmpy !=8.1.0,<8.4.0
+    - filelock
     - fiona
     - fire
     - geopy
     - humanfriendly
     - importlib_resources
+    - iris-esmf-regrid
     - isodate
     - jinja2
     - nc-time-axis
     - nested-lookup
     - netCDF4 !=1.6.1
     - numpy
+    - packaging
     - pandas
     - pillow
     - prov
     - psutil
+    - py-cordex
     - pybtex
     - pyyaml
     - requests
@@ -64,7 +68,8 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8 <5.0
+    - flake8
+    - mypy >=0.990
     - pip
     - pytest
     - pytest-cov
@@ -106,6 +111,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - remi-kazeroni
     - bouweandela
     - nielsdrost
     - schlunma

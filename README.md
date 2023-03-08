@@ -1,11 +1,11 @@
-About esmvalcore
-================
+About esmvalcore-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/esmvalcore-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.esmvaltool.org
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/esmvalcore-feedstock/blob/main/LICENSE.txt)
 
 Summary: ESMValCore: A community tool for pre-processing data from Earth system models in CMIP and running analysis scripts.
 
@@ -151,6 +151,7 @@ Feedstock Maintainers
 
 * [@bouweandela](https://github.com/bouweandela/)
 * [@nielsdrost](https://github.com/nielsdrost/)
+* [@remi-kazeroni](https://github.com/remi-kazeroni/)
 * [@schlunma](https://github.com/schlunma/)
 * [@sloosvel](https://github.com/sloosvel/)
 * [@valeriupredoi](https://github.com/valeriupredoi/)
