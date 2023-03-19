@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.5.0rc3" %}
+{% set version = "2.8.0rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4fc935a0543397a899adc574cbff603da1eb2b98deb7a2110e5435c01cd5af78
+  sha256: 93137dff3517132d4993d87f68d3a1fc88cc2925fb31fc01e2b3c586d62d8606
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -15,49 +15,50 @@ build:
   number: 0
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - git
-    - python >=3.7
+    - python >=3.8,<3.11
     - pip !=21.3
     - pytest-runner
     - setuptools_scm
   run:
     # esmvaltool
-    - python >=3.7
-    - iris >=3.1.0
+    - python >=3.8,<3.11
+    - iris >=3.4.0
     - python-stratify
     - scipy >=1.6
     # Normally installed via pip:
     - cartopy
     - cftime
-    - cf-units >=3.0.0
+    - cf-units
     - dask
-    - defusedxml
-    - esgf-pyclient
-    - esmpy !=8.1.0
+    - esgf-pyclient >=0.3.1
+    - esmpy !=8.1.0,<8.4.0
+    - filelock
     - fiona
     - fire
     - geopy
     - humanfriendly
     - importlib_resources
+    - iris-esmf-regrid
     - isodate
     - jinja2
-    - myproxyclient
     - nc-time-axis
     - nested-lookup
-    - netCDF4
+    - netCDF4 !=1.6.1
     - numpy
+    - packaging
     - pandas
     - pillow
     - prov
     - psutil
+    - py-cordex
     - pybtex
     - pyyaml
     - requests
-    - requests_cache <0.6
     - shapely
     - yamale
 
@@ -67,7 +68,8 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8 <4
+    - flake8
+    - mypy >=0.990
     - pip
     - pytest
     - pytest-cov
@@ -84,7 +86,7 @@ test:
     # - types-PyYAML
   commands:
     - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
-    - pytest -n 2 --ignore=run_test.py
+    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
   imports:
@@ -92,8 +94,11 @@ test:
     - esmvalcore.cmor
     - esmvalcore.cmor.check
     - esmvalcore.cmor.fix
-    - esmvalcore.preprocessor
+    - esmvalcore.esgf
+    - esmvalcore.exceptions
     - esmvalcore.experimental
+    - esmvalcore.iris_helpers
+    - esmvalcore.preprocessor
 
 about:
   home: https://www.esmvaltool.org
@@ -106,8 +111,10 @@ about:
 
 extra:
   recipe-maintainers:
+    - remi-kazeroni
     - bouweandela
     - nielsdrost
     - schlunma
+    - sloosvel
     - valeriupredoi
     - zklaus
