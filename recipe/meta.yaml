@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c2aed8647a1e77204d43f3d223c1d74d079ad918417d174747a03c195cfa0b1b
+  sha256: 9697c71dc08ee434980a00ca9a38573e63d467f1dd99d8bb75aff6ecedad33be
 
 build:
   # Increment the build number when building a new conda package of the same
