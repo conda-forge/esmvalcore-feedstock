@@ -94,10 +94,13 @@ test:
     - esmvalcore.cmor
     - esmvalcore.cmor.check
     - esmvalcore.cmor.fix
+    - esmvalcore.config
+    - esmvalcore.dataset
     - esmvalcore.esgf
     - esmvalcore.exceptions
     - esmvalcore.experimental
     - esmvalcore.iris_helpers
+    - esmvalcore.local
     - esmvalcore.preprocessor
 
 about:
