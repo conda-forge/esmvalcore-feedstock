@@ -20,14 +20,14 @@ build:
 requirements:
   host:
     - git
-    - python >=3.8
+    - python >=3.8,<3.11
     - pip !=21.3
     - pytest-runner
     - setuptools_scm
   run:
     # esmvaltool
-    - python >=3.8
-    - iris >=3.2.1
+    - python >=3.8,<3.11
+    - iris >=3.4.0
     - python-stratify
     - scipy >=1.6
     # Normally installed via pip:
@@ -36,22 +36,26 @@ requirements:
     - cf-units
     - dask
     - esgf-pyclient >=0.3.1
-    - esmpy <8.4.0, !=8.1.0
+    - esmpy !=8.1.0,<8.4.0
+    - filelock
     - fiona
     - fire
     - geopy
     - humanfriendly
     - importlib_resources
+    - iris-esmf-regrid
     - isodate
     - jinja2
     - nc-time-axis
     - nested-lookup
     - netCDF4
     - numpy
+    - packaging
     - pandas
     - pillow
     - prov
     - psutil
+    - py-cordex
     - pybtex
     - pyyaml
     - requests
@@ -65,7 +69,7 @@ test:
   requires:
     # - ESMValTool_sample_data==0.0.3
     - flake8
-    - mypy <0.990
+    - mypy >=0.990
     - pip
     - pytest
     - pytest-cov
@@ -82,7 +86,7 @@ test:
     # - types-PyYAML
   commands:
     - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
-    - pytest -n 2 -m 'not mypy' --ignore=run_test.py --ignore=tests/unit/documentation/
+    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
   imports:
@@ -90,10 +94,13 @@ test:
     - esmvalcore.cmor
     - esmvalcore.cmor.check
     - esmvalcore.cmor.fix
+    - esmvalcore.config
+    - esmvalcore.dataset
     - esmvalcore.esgf
     - esmvalcore.exceptions
     - esmvalcore.experimental
     - esmvalcore.iris_helpers
+    - esmvalcore.local
     - esmvalcore.preprocessor
 
 about:
