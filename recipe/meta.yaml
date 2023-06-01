@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.8.1rc1" %}
+{% set version = "2.8.1rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fca5068de6d1df2fd857b0369ff0810b46212e210aaeaec5d5f8f85b699e0db3
+  sha256: 1d586d40910d04e49dee3e2e99486f592228e91b5ac0950a08d0dbf77de73e27
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -46,6 +46,7 @@ requirements:
     - iris-esmf-regrid >=0.6.0  # to work with latest esmpy
     - isodate
     - jinja2
+    - libnetcdf !=4.9.1  # issues lots of HDF5 warnings
     - nc-time-axis
     - nested-lookup
     - netCDF4
