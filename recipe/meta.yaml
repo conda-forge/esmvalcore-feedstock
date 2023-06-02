@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.8.0" %}
+{% set version = "2.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 621e551676a7f557b9a9cdc61182b8b75c98c47a058b0d388ee40f7ef2a22c60
+  sha256: fa403fd4738896bd3d4ba8e346cca996afaac7e040aaead7cf9006db930db11c
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -20,13 +20,13 @@ build:
 requirements:
   host:
     - git
-    - python >=3.8,<3.11
+    - python >=3.8
     - pip !=21.3
     - pytest-runner
     - setuptools_scm
   run:
     # esmvaltool
-    - python >=3.8,<3.11
+    - python >=3.8
     - iris >=3.4.0
     - python-stratify
     - scipy >=1.6
@@ -36,20 +36,21 @@ requirements:
     - cf-units
     - dask
     - esgf-pyclient >=0.3.1
-    - esmpy !=8.1.0,<8.4.0
+    - esmpy !=8.1.0
     - filelock
     - fiona
     - fire
     - geopy
     - humanfriendly
     - importlib_resources
-    - iris-esmf-regrid
+    - iris-esmf-regrid >=0.6.0  # to work with latest esmpy
     - isodate
     - jinja2
+    - libnetcdf !=4.9.1  # issues lots of HDF5 warnings
     - nc-time-axis
     - nested-lookup
     - netCDF4
-    - numpy
+    - numpy !=1.24.3  # severe bug in masked arrays
     - packaging
     - pandas
     - pillow
