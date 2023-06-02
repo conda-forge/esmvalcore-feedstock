@@ -58,6 +58,7 @@ requirements:
     - psutil
     - py-cordex
     - pybtex
+    - pytest-json-report  # needed by esmpy=8.4.0/1 (to be removed in 2.9.0)
     - pyyaml
     - requests
     - shapely
