@@ -38,7 +38,7 @@ requirements:
     - fire
     - geopy
     - humanfriendly
-    - importlib_metdata  # [py<3.10]
+    - importlib_metdata
     - iris >=3.6.0
     - iris-esmf-regrid >=0.7.0
     - isodate
