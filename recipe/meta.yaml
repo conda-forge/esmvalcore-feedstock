@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.9.0rc1" %}
+{% set version = "2.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 25998ed5e38e162645869ec004757a58e3a578ff7b7bc38a8887808e19493822
+  sha256: ed642f5ca66cb1113b5f628edf1e3004d5a7a7f36d624874817f406793469a2c
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -38,7 +38,7 @@ requirements:
     - fire
     - geopy
     - humanfriendly
-    - iris >=3.6.0
+    - iris >=3.4.0
     - iris-esmf-regrid >=0.7.0
     - isodate
     - jinja2
