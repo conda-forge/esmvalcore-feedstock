@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - git
-    - python >=3.9
+    - python >=3.9,<3.12
     - pip !=21.3
     - pytest-runner
     - setuptools_scm
@@ -55,7 +55,7 @@ requirements:
     - psutil
     - py-cordex
     - pybtex
-    - python >=3.9
+    - python >=3.9,<3.12
     - python-stratify >=0.3
     - pyyaml
     - requests
