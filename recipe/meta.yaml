@@ -39,7 +39,7 @@ requirements:
     - geopy
     - humanfriendly
     - importlib_metadata
-    - iris >=3.6.0
+    - iris >=3.6.1
     - iris-esmf-regrid >=0.7.0
     - isodate
     - jinja2
@@ -82,10 +82,9 @@ test:
     - pytest-xdist
     - r-yaml
     # - types-requests
-    # - types-pkg_resources
     # - types-PyYAML
   commands:
-    - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
+    - pip install ESMValTool-sample-data types-requests types-PyYAML
     - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
