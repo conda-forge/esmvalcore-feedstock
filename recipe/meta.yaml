@@ -4,7 +4,6 @@
 
 package:
   name: {{ name }}
-  lower_name: {{ lower_name }}
   version: {{ version }}
 
 source:
