@@ -1,12 +1,12 @@
-{% set name = "ESMValCore" %}
+{% set package_name = "ESMValCore" %}
 {% set version = "2.11.0rc1" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ package_name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ package_name[0] }}/{{ package_name }}/{{ package_name|lower }}-{{ version }}.tar.gz
   sha256: b2fd4d635f240d797113549ee2e230ffbe95cec253494765db42a07e3f695fba
 
 build:
