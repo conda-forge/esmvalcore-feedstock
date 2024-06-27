@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - git
-    - python >=3.9,<3.12
+    - python >=3.9
     - pip !=21.3
     - pytest-runner
     - setuptools_scm
