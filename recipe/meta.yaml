@@ -1,13 +1,13 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.10.0" %}
+{% set version = "2.11.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1915d0213ca1984253b6c7ffec24ce45f5bb60dfe3e39fad5bf1d24278c97952
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
+  sha256: 0600379e396976befcdc64ea7a06317ab5fba9c4c8391042e4a5036643838ec9
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -38,8 +38,8 @@ requirements:
     - fire
     - geopy
     - humanfriendly
-    - importlib_metadata
-    - iris >=3.6.1
+    - importlib_metadata  # required for Python < 3.10
+    - iris >3.8.0
     - iris-esmf-regrid >=0.7.0
     - isodate
     - jinja2
@@ -47,15 +47,15 @@ requirements:
     - nc-time-axis
     - nested-lookup
     - netcdf4
-    - numpy !=1.24.3  # severe bug in masked arrays
+    - numpy !=1.24.3,<2.0.0  # severe bug in masked arrays, avoid pulling 2.0.0
     - packaging
-    - pandas
+    - pandas !=2.2.0,!=2.2.1,!=2.2.2  # github.com/ESMValGroup/ESMValCore/pull/2305 and #2349
     - pillow
     - prov
     - psutil
     - py-cordex
     - pybtex
-    - python >=3.9,<3.12
+    - python >=3.9
     - python-stratify >=0.3
     - pyyaml
     - requests
@@ -69,14 +69,14 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8
+    - flake8 >=7
     - mypy >=0.990
     - pip
-    - pytest
-    - pytest-cov
+    - pytest >=3.9,!=6.0.0rc1,!=6.0.0
+    - pytest-cov >=2.10.1
     - pytest-env
-    - pytest-html
-    - pytest-metadata
+    - pytest-html !=2.1.0
+    - pytest-metadata >=1.5.1
     - pytest-mock
     - pytest-mypy
     - pytest-xdist
