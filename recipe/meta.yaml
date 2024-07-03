@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.10.0" %}
+{% set version = "2.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -32,14 +32,14 @@ requirements:
     - dask-jobqueue
     - distributed
     - esgf-pyclient >=0.3.1
-    - esmpy !=8.1.0
+    - esmpy !=8.1.0,<8.6.0  # https://github.com/SciTools-incubator/iris-esmf-regrid/pull/342#issuecomment-2092921514
     - filelock
     - fiona
     - fire
     - geopy
     - humanfriendly
-    - importlib_metadata
-    - iris >=3.6.1
+    - importlib_metadata  # required for Python < 3.10
+    - iris >3.8.0
     - iris-esmf-regrid >=0.7.0
     - isodate
     - jinja2
@@ -47,15 +47,15 @@ requirements:
     - nc-time-axis
     - nested-lookup
     - netcdf4
-    - numpy !=1.24.3  # severe bug in masked arrays
+    - numpy !=1.24.3,<2.0.0  # severe bug in masked arrays, avoid pulling 2.0.0rcX
     - packaging
-    - pandas
+    - pandas !=2.2.0,!=2.2.1,!=2.2.2  # github.com/ESMValGroup/ESMValCore/pull/2305 and #2349
     - pillow
     - prov
     - psutil
     - py-cordex
     - pybtex
-    - python >=3.9,<3.12
+    - python >=3.9
     - python-stratify >=0.3
     - pyyaml
     - requests
@@ -69,14 +69,14 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - flake8
+    - flake8 >=7
     - mypy >=0.990
     - pip
-    - pytest
-    - pytest-cov
+    - pytest >=3.9,!=6.0.0rc1,!=6.0.0
+    - pytest-cov >=2.10.1
     - pytest-env
-    - pytest-html
-    - pytest-metadata
+    - pytest-html !=2.1.0
+    - pytest-metadata >=1.5.1
     - pytest-mock
     - pytest-mypy
     - pytest-xdist
