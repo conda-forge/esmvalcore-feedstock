@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
   sha256: 5d85716473d3e5a4172c755d0b6dcb895649f90b7a81f0d47b87bf8aae68a91b
 
 build:
@@ -38,7 +38,6 @@ requirements:
     - fire
     - geopy
     - humanfriendly
-    - importlib_metadata  # required for Python < 3.10
     - iris >=3.11.0
     - iris-esmf-regrid >=0.11.0
     - isodate >=0.7.0
