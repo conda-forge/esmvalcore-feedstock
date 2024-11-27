@@ -19,12 +19,14 @@ build:
 
 requirements:
   host:
-    - git
     - python >=3.10,<3.13
+    - git
     - pip !=21.3
     - pytest-runner
-    - setuptools_scm
+    - setuptools >=40.6.0
+    - setuptools_scm >=6.2
   run:
+    - python >=3.10,<3.13
     - cartopy
     - cf-units
     - cftime
@@ -54,7 +56,6 @@ requirements:
     - psutil
     - py-cordex
     - pybtex
-    - python >=3.10
     - python-stratify >=0.3
     - pyyaml
     - requests
