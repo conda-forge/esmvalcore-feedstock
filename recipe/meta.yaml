@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "ESMValCore" %}
 {% set version = "2.11.1" %}
 
@@ -12,21 +13,21 @@ source:
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 0
+  number: 1
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.10,<3.13
+    - python {{ python_min }}
     - git
     - pip !=21.3
     - pytest-runner
     - setuptools >=40.6.0
     - setuptools_scm >=6.2
   run:
-    - python >=3.10,<3.13
+    - python >={{ python_min }},<3.13
     - cartopy
     - cf-units
     - cftime
@@ -83,6 +84,7 @@ test:
     - r-yaml
     # - types-requests
     # - types-PyYAML
+    - python {{ python_min }}
   commands:
     - pip install ESMValTool-sample-data types-requests types-PyYAML
     - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
