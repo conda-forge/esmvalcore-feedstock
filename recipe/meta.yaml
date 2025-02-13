@@ -1,5 +1,5 @@
 {% set name = "ESMValCore" %}
-{% set version = "2.11.0rc2" %}
+{% set version = "2.12.0rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: c6b4dd9aac49d5aff7c35e86ac37c4e803cc067eb93a673fe6d2a77871474186
+  sha256: 857789bd1c7fdec57124ae1bc726f62c4b934c728822015aa813dfa881ee5c0d
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -28,20 +28,21 @@ requirements:
     - cartopy
     - cf-units
     - cftime
-    - dask
+    - dask >=2025
     - dask-jobqueue
     - distributed
     - esgf-pyclient >=0.3.1
-    - esmpy !=8.1.0,<8.6.0  # https://github.com/SciTools-incubator/iris-esmf-regrid/pull/342#issuecomment-2092921514
+    - esmpy 
     - filelock
     - fiona
     - fire
     - geopy
     - humanfriendly
     - importlib_metadata
-    - iris >3.8.0
-    - iris-esmf-regrid >=0.7.0
-    - isodate
+    - iris >3.11
+    - iris-esmf-regrid >=0.11.0
+    - iris-grib >=0.20.0
+    - isodate >=0.7.0
     - jinja2
     - libnetcdf !=4.9.1  # to avoid hdf5 warnings
     - nc-time-axis
@@ -49,16 +50,17 @@ requirements:
     - netcdf4
     - numpy !=1.24.3,<2.0.0  # severe bug in masked arrays, avoid pulling 2.0.0rcX
     - packaging
-    - pandas !=2.2.0,!=2.2.1,!=2.2.2  # github.com/ESMValGroup/ESMValCore/pull/2305 and #2349
+    - pandas 
     - pillow
     - prov
     - psutil
     - py-cordex
     - pybtex
-    - python >=3.9
+    - python >=3.10
     - python-stratify >=0.3
     - pyyaml
     - requests
+    - rich
     - scipy >=1.6
     - shapely >=2.0.0
     - yamale
