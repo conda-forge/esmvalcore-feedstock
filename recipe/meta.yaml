@@ -20,13 +20,14 @@ build:
 
 requirements:
   host:
+    - python >={{ python_min }}          
     - git
-    - python >={{ python_min }}
     - pip !=21.3
     - pytest-runner
     - setuptools >=40.6.0
     - setuptools_scm >=6.2
   run:
+    - python >={{ python_min }}          
     - cartopy
     - cf-units
     - cftime
@@ -58,7 +59,6 @@ requirements:
     - psutil
     - py-cordex
     - pybtex
-    - python >={{ python_min }}
     - python-stratify >=0.3
     - pyyaml
     - requests
@@ -85,10 +85,9 @@ test:
     - pytest-mypy
     - pytest-xdist
     # - types-requests
-    # - types-pkg_resources
     # - types-PyYAML
   commands:
-    - pip install ESMValTool-sample-data types-requests types-setuptools types-PyYAML
+    - pip install ESMValTool-sample-data types-requests types-PyYAML
     - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
