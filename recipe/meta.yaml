@@ -39,7 +39,7 @@ requirements:
     - geopy
     - humanfriendly
     - importlib-metadata
-    - iris >3.11
+    - iris >=3.11
     - iris-esmf-regrid >=0.11.0
     - iris-grib >=0.20.0
     - isodate >=0.7.0
@@ -48,7 +48,7 @@ requirements:
     - nc-time-axis
     - nested-lookup
     - netcdf4
-    - numpy !=1.24.3,<2.0.0  # severe bug in masked arrays, avoid pulling 2.0.0rcX
+    - numpy !=1.24.3
     - packaging
     - pandas 
     - pillow
