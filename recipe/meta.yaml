@@ -73,6 +73,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
+    - python >={{ python_min }}
     - flake8 >=7
     - mypy >=0.990
     - pip
