@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "ESMValCore" %}
 {% set version = "2.12.0rc1" %}
 
@@ -20,10 +21,11 @@ build:
 requirements:
   host:
     - git
-    - python >=3.10
+    - python >={{ python_min }}
     - pip !=21.3
     - pytest-runner
-    - setuptools_scm
+    - setuptools >=40.6.0
+    - setuptools_scm >=6.2
   run:
     - cartopy
     - cf-units
@@ -56,7 +58,7 @@ requirements:
     - psutil
     - py-cordex
     - pybtex
-    - python >=3.10
+    - python >={{ python_min }}
     - python-stratify >=0.3
     - pyyaml
     - requests
