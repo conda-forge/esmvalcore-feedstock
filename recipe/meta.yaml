@@ -88,7 +88,7 @@ test:
     # - types-pkg_resources
     # - types-PyYAML
   commands:
-    - pip install ESMValTool-sample-data types-requests types-pkg_resources types-PyYAML
+    - pip install ESMValTool-sample-data types-requests types-setuptools types-PyYAML
     - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
