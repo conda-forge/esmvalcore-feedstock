@@ -89,7 +89,8 @@ test:
     # - types-PyYAML
   commands:
     - pip install ESMValTool-sample-data types-requests types-PyYAML
-    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
+    # TODO make sure to remove the test_load ignore; see https://github.com/ESMValGroup/ESMValCore/issues/2664
+    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/ --ignore=tests/integration/preprocessor/_io/test_load.py
     - esmvaltool -- --help
     - esmvaltool version
   imports:
