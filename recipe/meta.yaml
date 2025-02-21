@@ -31,7 +31,7 @@ requirements:
     - cartopy
     - cf-units
     - cftime
-    - dask >=2025,<2025.2  # github.com/ESMValGroup/ESMValCore/pull/2663
+    - dask >=2025
     - dask-jobqueue
     - distributed
     - esgf-pyclient >=0.3.1
