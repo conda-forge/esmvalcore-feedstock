@@ -1,6 +1,6 @@
 {% set python_min = '3.10' %}
 {% set name = "ESMValCore" %}
-{% set version = "2.12.0rc1" %}
+{% set version = "2.12.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: 857789bd1c7fdec57124ae1bc726f62c4b934c728822015aa813dfa881ee5c0d
+  sha256: 35ef414364629e4960e7e0491e0920ae02ed3d1283089359ffba127e07974078
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -31,7 +31,7 @@ requirements:
     - cartopy
     - cf-units
     - cftime
-    - dask >=2025,<2025.2  # github.com/ESMValGroup/ESMValCore/pull/2663
+    - dask >=2025
     - dask-jobqueue
     - distributed
     - esgf-pyclient >=0.3.1
@@ -89,8 +89,7 @@ test:
     # - types-PyYAML
   commands:
     - pip install ESMValTool-sample-data types-requests types-PyYAML
-    # TODO make sure to remove the test_load ignore; see https://github.com/ESMValGroup/ESMValCore/issues/2664
-    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/ --ignore=tests/integration/preprocessor/_io/test_load.py
+    - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
   imports:
