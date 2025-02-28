@@ -31,11 +31,11 @@ requirements:
     - cartopy
     - cf-units
     - cftime
-    - dask !=2024.8.0
+    - dask >=2025
     - dask-jobqueue
     - distributed
     - esgf-pyclient >=0.3.1
-    - esmpy !=8.1.0
+    - esmpy
     - filelock
     - fiona
     - fire
@@ -43,13 +43,14 @@ requirements:
     - humanfriendly
     - iris >=3.11.0
     - iris-esmf-regrid >=0.11.0
+    - iris-grib >=0.20.0  
     - isodate >=0.7.0
     - jinja2
     - libnetcdf !=4.9.1  # issues lots of HDF5 warnings
     - nc-time-axis
     - nested-lookup
     - netcdf4
-    - numpy !=1.24.3,<2.0.0  # severe bug in masked arrays, avoid pulling 2.0.0
+    - numpy !=1.24.3
     - packaging
     - pandas
     - pillow
