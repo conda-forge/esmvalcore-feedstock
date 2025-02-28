@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "ESMValCore" %}
-{% set version = "2.11.1" %}
+{% set version = "2.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: 302bc6a799ac04945073e87433ce831a26257aef53d0bc58702893765ec84b44
+  sha256: b4b69499db3a9db6492f98a5df609b5abca5e1005c8da19ea5eabe7be3b16baa
 
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 1
+  number: 0
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -31,11 +31,11 @@ requirements:
     - cartopy
     - cf-units
     - cftime
-    - dask !=2024.8.0
+    - dask >=2025
     - dask-jobqueue
     - distributed
     - esgf-pyclient >=0.3.1
-    - esmpy !=8.1.0
+    - esmpy
     - filelock
     - fiona
     - fire
@@ -43,13 +43,14 @@ requirements:
     - humanfriendly
     - iris >=3.11.0
     - iris-esmf-regrid >=0.11.0
+    - iris-grib >=0.20.0  
     - isodate >=0.7.0
     - jinja2
     - libnetcdf !=4.9.1  # issues lots of HDF5 warnings
     - nc-time-axis
     - nested-lookup
     - netcdf4
-    - numpy !=1.24.3,<2.0.0  # severe bug in masked arrays, avoid pulling 2.0.0
+    - numpy !=1.24.3
     - packaging
     - pandas
     - pillow
@@ -60,6 +61,7 @@ requirements:
     - python-stratify >=0.3
     - pyyaml
     - requests
+    - rich  
     - scipy >=1.6
     - shapely >=2.0.0
     - yamale
