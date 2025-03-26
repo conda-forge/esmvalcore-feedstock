@@ -13,7 +13,7 @@ source:
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 0
+  number: 1
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -27,7 +27,7 @@ requirements:
     - setuptools >=40.6.0
     - setuptools_scm >=6.2
   run:
-    - python >={{ python_min }},<3.13
+    - python >={{ python_min }}
     - cartopy
     - cf-units
     - cftime
