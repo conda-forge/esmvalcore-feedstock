@@ -20,7 +20,7 @@ build:
 
 requirements:
   host:
-    - python >={{ python_min }}          
+    - python {{ python_min }}          
     - git
     - pip !=21.3
     - pytest-runner
@@ -78,7 +78,7 @@ test:
     - setup.cfg
   requires:
     # - ESMValTool_sample_data==0.0.3
-    - python >={{ python_min }}
+    - python {{ python_min }}
     - flake8 >=7
     - mypy >=0.990
     - pip
