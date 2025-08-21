@@ -89,10 +89,9 @@ test:
     - pytest-mock
     - pytest-mypy
     - pytest-xdist
-    # - types-requests
-    # - types-PyYAML
+    - types-requests
+    - types-PyYAML
   commands:
-    - pip install ESMValTool-sample-data types-requests types-PyYAML
     - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
     - esmvaltool -- --help
     - esmvaltool version
