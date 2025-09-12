@@ -19,11 +19,11 @@ build:
   # This is noarch but will fail on windows due to missing dependency esmpy.
   number: 2
   noarch: python
-  script: ${{ PYTHON }} -m pip install . --no-deps -vv
+  script: ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
 
 requirements:
   host:
-    - python 3.10.*
+    - python ${{ python_min }}.*
     - git
     - pip !=21.3
     - pytest-runner
@@ -84,7 +84,7 @@ tests:
         - esmvalcore.iris_helpers
         - esmvalcore.local
         - esmvalcore.preprocessor
-      pip_check: false
+      pip_check: true
       python_version: ${{ python_min }}.*
   - files:
       source:
