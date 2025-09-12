@@ -3,7 +3,7 @@ About esmvalcore-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/esmvalcore-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.esmvaltool.org
+Home: https://www.esmvaltool.org/
 
 Package license: Apache-2.0
 
@@ -151,6 +151,7 @@ Feedstock Maintainers
 
 * [@bouweandela](https://github.com/bouweandela/)
 * [@ehogan](https://github.com/ehogan/)
+* [@jlenh](https://github.com/jlenh/)
 * [@nielsdrost](https://github.com/nielsdrost/)
 * [@remi-kazeroni](https://github.com/remi-kazeroni/)
 * [@schlunma](https://github.com/schlunma/)
