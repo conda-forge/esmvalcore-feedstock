@@ -1,6 +1,6 @@
 {% set python_min = '3.11' %}
 {% set name = "ESMValCore" %}
-{% set version = "2.13.0rc1" %}
+{% set version = "2.13.0rc3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: 727869d28a786361fb29ba7c476395c525b659f45767b90b312093d6bcaaf2bf
+  sha256: 9c2bd396b1ef05c0ee8345fd857dcb504b89daa4b18475c3df0c87d54225d81e
 
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 0
+  number: 3
   # This is noarch but will fail on windows due to missing dependency esmpy.
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -44,6 +44,7 @@ requirements:
     - geopy
     - humanfriendly
     - importlib-metadata
+    - intake-esm
     - iris >=3.12.2
     - iris-esmf-regrid >=0.11.0
     - iris-grib >=0.20.0
