@@ -1,6 +1,6 @@
 {% set python_min = '3.11' %}
 {% set name = "ESMValCore" %}
-{% set version = "2.13.0rc1" %}
+{% set version = "2.13.0rc4" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: 727869d28a786361fb29ba7c476395c525b659f45767b90b312093d6bcaaf2bf
+  sha256: ee3398b91ec52635b7d67e541e40a11c4915a64476eea6c4aded5116d0f35d2c
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -87,7 +87,6 @@ test:
     - pytest-html !=2.1.0
     - pytest-metadata >=1.5.1
     - pytest-mock
-    - pytest-mypy
     - pytest-xdist
     - types-requests
     - types-PyYAML
