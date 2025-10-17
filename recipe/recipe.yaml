@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: 3.11
   name: ESMValCore
-  version: 2.12.0
+  version: "2.13.0"
 
 package:
   name: ${{ name|lower }}
@@ -11,13 +11,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|lower }}-${{ version }}.tar.gz
-  sha256: b4b69499db3a9db6492f98a5df609b5abca5e1005c8da19ea5eabe7be3b16baa
+  sha256: 033f885d28fde8dc3b3724b1ca1acae7e9f75411e8daa155c041d952300d915b
 
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
   # This is noarch but will fail on windows due to missing dependency esmpy.
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
 
@@ -31,6 +31,7 @@ requirements:
     - setuptools_scm >=6.2
   run:
     - python >=${{ python_min }}
+    - aiohttp
     - cartopy
     - cf-units
     - cftime
@@ -39,11 +40,13 @@ requirements:
     - distributed
     - esgf-pyclient >=0.3.1
     - esmpy
+    - esmvaltool-sample-data
     - filelock
     - fiona
     - fire
     - geopy
     - humanfriendly
+    - intake-esm
     - iris >=3.12.2
     - iris-esmf-regrid >=0.11.0
     - iris-grib >=0.20.0
@@ -51,6 +54,7 @@ requirements:
     - jinja2
     - libnetcdf !=4.9.1  # issues lots of HDF5 warnings
     - nc-time-axis
+    - ncdata
     - nested-lookup
     - netcdf4
     - numpy !=1.24.3
@@ -67,7 +71,9 @@ requirements:
     - rich
     - scipy >=1.6
     - shapely >=2.0.0
+    - xarray
     - yamale
+    - zarr >3
 
 tests:
   - python:
@@ -96,7 +102,7 @@ tests:
         - flake8 >=7
         - mypy >=0.990
         - pip
-        - pytest >=3.9,!=6.0.0rc1,!=6.0.0
+        - pytest >6.0.0
         - pytest-cov >=2.10.1
         - pytest-env
         - pytest-html !=2.1.0
