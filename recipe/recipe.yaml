@@ -31,6 +31,7 @@ requirements:
     - setuptools_scm >=6.2
   run:
     - python >=${{ python_min }}
+    - aiohttp
     - cartopy
     - cf-units
     - cftime
@@ -39,11 +40,14 @@ requirements:
     - distributed
     - esgf-pyclient >=0.3.1
     - esmpy
+    - esmvaltool-sample-data
     - filelock
     - fiona
     - fire
     - geopy
     - humanfriendly
+    - importlib-metadata
+    - intake-esm
     - iris >=3.12.2
     - iris-esmf-regrid >=0.11.0
     - iris-grib >=0.20.0
@@ -51,6 +55,7 @@ requirements:
     - jinja2
     - libnetcdf !=4.9.1  # issues lots of HDF5 warnings
     - nc-time-axis
+    - ncdata
     - nested-lookup
     - netcdf4
     - numpy !=1.24.3
@@ -67,7 +72,9 @@ requirements:
     - rich
     - scipy >=1.6
     - shapely >=2.0.0
+    - xarray
     - yamale
+    - zarr >3
 
 tests:
   - python:
@@ -96,7 +103,7 @@ tests:
         - flake8 >=7
         - mypy >=0.990
         - pip
-        - pytest >=3.9,!=6.0.0rc1,!=6.0.0
+        - pytest >6.0.0
         - pytest-cov >=2.10.1
         - pytest-env
         - pytest-html !=2.1.0
