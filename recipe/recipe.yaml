@@ -81,14 +81,29 @@ tests:
         - esmvalcore.cmor
         - esmvalcore.cmor.check
         - esmvalcore.cmor.fix
+        - esmvalcore.cmor.fixes
+        - esmvalcore.cmor.table
         - esmvalcore.config
         - esmvalcore.dataset
         - esmvalcore.esgf
         - esmvalcore.exceptions
         - esmvalcore.experimental
+        - esmvalcore.experimental.recipe
+        - esmvalcore.experimental.recipe_info
+        - esmvalcore.experimental.recipe_metadata
+        - esmvalcore.experimental.recipe_output
+        - esmvalcore.experimental.utils
+        - esmvalcore.io
+        - esmvalcore.io.esgf
+        - esmvalcore.io.esgf.facets
+        - esmvalcore.io.intake_esgf
+        - esmvalcore.io.local
+        - esmvalcore.io.protocol
         - esmvalcore.iris_helpers
         - esmvalcore.local
         - esmvalcore.preprocessor
+        - esmvalcore.preprocessor.regrid_schemes
+        - esmvalcore.typing
       pip_check: true
       python_version: ${{ python_min }}.*
   - files:
