@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: 3.12
   name: ESMValCore
-  version: 2.14.0rc1
+  version: 2.14.0rc2
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|lower }}-${{ version }}.tar.gz
-  sha256: 146890e2208cd6d2e149cea358304b860f501c5d13ea3e77d28014a851705f45
+  sha256: 7e1dffb14484888b027f4ff052bb5b8eabd0df8773252ff810c1a585f5bbde00
 
 build:
   # Increment the build number when building a new conda package of the same
@@ -123,7 +123,6 @@ tests:
         - r-yaml
         - python ${{ python_min }}.*
     script:
-      - pip install types-requests types-PyYAML
       - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
       - esmvaltool -- --help
       - esmvaltool version
