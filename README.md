@@ -19,10 +19,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12350&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/esmvalcore-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/esmvalcore-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/esmvalcore-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -151,6 +152,7 @@ Feedstock Maintainers
 
 * [@bouweandela](https://github.com/bouweandela/)
 * [@ehogan](https://github.com/ehogan/)
+* [@flicj191](https://github.com/flicj191/)
 * [@jlenh](https://github.com/jlenh/)
 * [@schlunma](https://github.com/schlunma/)
 * [@valeriupredoi](https://github.com/valeriupredoi/)
