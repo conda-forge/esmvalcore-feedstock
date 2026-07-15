@@ -44,7 +44,7 @@ requirements:
     - fire
     - geopy
     - humanfriendly
-    - intake-esgf >=2025.10.22
+    - intake-esgf >=2026.4.28
     - intake-esm
     - iris
     - iris-esmf-regrid >=0.11.0
