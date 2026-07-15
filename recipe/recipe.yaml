@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: "3.12"
   name: ESMValCore
-  version: "2.14.0"
+  version: "2.15.0"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|lower }}-${{ version }}.tar.gz
-  sha256: 054388ec2f986d3d182067f51445f44204a62aa1ccf53828f8e547f98685136b
+  sha256: ca2d15227ffbd76158915e5484b864e96a962902e1c53d1b0f5d2c81d49f61eb
 
 build:
   # Increment the build number when building a new conda package of the same
