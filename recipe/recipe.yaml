@@ -105,7 +105,9 @@ tests:
         - esmvalcore.preprocessor.regrid_schemes
         - esmvalcore.typing
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - files:
       source:
         - tests
