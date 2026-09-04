@@ -16,7 +16,7 @@ source:
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
 
@@ -38,7 +38,6 @@ requirements:
     - dask-jobqueue
     - distributed
     - esgf-pyclient >=0.3.1
-    - esmvaltool-sample-data
     - filelock
     - fiona
     - fire
@@ -52,6 +51,7 @@ requirements:
     - isodate >=0.7.0
     - jinja2
     - libnetcdf !=4.9.1  # issues lots of HDF5 warnings
+    - lxml  # Used by the `prov` library to serialize provenance to XML.
     - nc-time-axis
     - ncdata
     - nested-lookup
@@ -60,7 +60,7 @@ requirements:
     - packaging
     - pandas
     - pillow
-    - prov
+    - prov-core
     - psutil
     - py-cordex
     - pybtex
