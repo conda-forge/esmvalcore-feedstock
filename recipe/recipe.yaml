@@ -45,7 +45,7 @@ requirements:
     - humanfriendly
     - intake-esgf >=2026.4.28
     - intake-esm
-    - iris != 3.16.0  # https://github.com/SciTools/ncdata/issues/255
+    - iris !=3.16.0  # https://github.com/SciTools/ncdata/issues/255
     - iris-esmf-regrid >=0.11.0
     - iris-grib >=0.20.0
     - isodate >=0.7.0
