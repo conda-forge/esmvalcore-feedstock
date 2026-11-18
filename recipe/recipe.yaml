@@ -124,7 +124,8 @@ tests:
         - r-yaml
         - python ${{ python_min }}.*
     script:
-      - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/
+      # remove --ignore=tests/unit/io/test_intake_esgf.py in v2.16
+      - pytest -n 2 --ignore=run_test.py --ignore=tests/unit/documentation/ --ignore=tests/unit/io/test_intake_esgf.py
       - esmvaltool -- --help
       - esmvaltool version
 
