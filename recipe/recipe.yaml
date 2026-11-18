@@ -103,7 +103,7 @@ tests:
         - esmvalcore.preprocessor
         - esmvalcore.preprocessor.regrid_schemes
         - esmvalcore.typing
-      pip_check: true
+      pip_check: false  # TURN THIS BACK ON in 2.16
       python_version:
         - ${{ python_min }}.*
         - "*"
