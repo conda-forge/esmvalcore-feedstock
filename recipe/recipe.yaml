@@ -59,7 +59,7 @@ requirements:
     - packaging
     - pandas
     - pillow
-    - prov-core
+    - prov <3  # prov-core for v2.16
     - psutil
     - py-cordex
     - pybtex
