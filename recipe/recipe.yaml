@@ -16,7 +16,7 @@ source:
 build:
   # Increment the build number when building a new conda package of the same
   # esmvalcore version, reset to 0 when building a new version.
-  number: 1
+  number: 2
   noarch: python
   script: ${{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
 
@@ -43,8 +43,7 @@ requirements:
     - fire
     - geopy
     - humanfriendly
-    - intake-esgf >=2026.4.28
-    - intake-esm
+    - intake-esgf >=2026.9.28
     - iris !=3.16.0  # https://github.com/SciTools/ncdata/issues/255
     - iris-esmf-regrid >=0.11.0
     - iris-grib >=0.20.0
@@ -53,7 +52,7 @@ requirements:
     - libnetcdf !=4.9.1  # issues lots of HDF5 warnings
     - lxml  # Used by the `prov` library to serialize provenance to XML.
     - nc-time-axis
-    - ncdata
+    - ncdata >=0.4
     - nested-lookup
     - netcdf4
     - numpy !=1.24.3
